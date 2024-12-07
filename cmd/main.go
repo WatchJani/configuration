@@ -6,7 +6,8 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"root/cmd/internal/cli"
+
+	"github.com/WatchJani/configuration/cmd/internal/cli"
 )
 
 var (
@@ -54,8 +55,7 @@ func ChoseMode(mod string) (Mod, error) {
 }
 
 func main() {
-	path := cli.SetupFlags()
-	data, err := ReadConf(path)
+	data, err := ReadConf(cli.SetupFlags())
 	if err != nil {
 		os.Exit(1)
 	}
